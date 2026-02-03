@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Commerce store</title>
+</head>
+<style>
+	body{
+		background-color: white;
+	}
+	#products{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+		gap: 20px;
+
+	}
+	.card{
+		border: 1px solid grey;
+		box-shadow: inset;
+		text-align: center;
+
+	}
+	.card img{
+		height: 90px;
+		width: 90px;
+		padding: 15px;
+		object-fit: contain;
+	}
+	.card h4{
+		font-size: small;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	#search{
+		margin:10px;
+	}
+</style>
+<body>
+	<h1>E-Commerce store</h1>
+	<h4>Your one stop shop for all needs.</h4>
+	<label for="search"></label>
+	<!--search placeholder-->
+	<input
+	id="search"
+	placeholder="Search your product"
+	name="search"
+	type="text">
+	<div id="products"></div>
+	<script src="index.js"></script>
+</body>
+</html>
