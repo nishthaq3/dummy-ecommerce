@@ -17,7 +17,7 @@ getAPI()
 function showProducts(products){
 	let container=document.getElementById("products")
 	container.innerHTML=""
-
+	//create a btn for each card, which shows its details
 	products.forEach(p=>{
 		let card=document.createElement("div")
 		card.className="card";
@@ -27,6 +27,8 @@ function showProducts(products){
 		<h5>${p.title}</h5>
 		<p>Price: ₹${p.price}</p>
 		`
+		addDetails(card,p);
+		//dotn send the entire array, just send a pratticular product
 		container.appendChild(card)
 	})
 }
@@ -43,3 +45,25 @@ btn.addEventListener("click",()=>{
 		//is typing is in the title
 		showProducts(filtered)
 })
+function addDetails(card,product){
+	//created a seperate func to add
+	//buttons and then adding the event for the button
+	let detailBtn=document.createElement("button")
+	detailBtn.className="detailbtn"
+	detailBtn.innerText="View details"
+	
+	detailBtn.addEventListener("click",()=>{
+		//what to do after button is clicked?
+		//make sure another tab opens which fetches the product by their id
+		window.location.href=`productdetail.html?id=${product.id}`
+	})
+
+	card.appendChild(detailBtn);
+
+	//window.location means this tab's location
+	//href denotes what this tab points to
+	//we are making it point topage productdetail.html whose url contains ?id=${product.id}
+	//?id=${product.id} this is called a query parameter,syntax: ?key=value
+	//query parameter lets u send data bw pages
+	//now productdetail.html also recieves product id as data and can show the product using the id.
+}
