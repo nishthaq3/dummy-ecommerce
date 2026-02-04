@@ -16,9 +16,10 @@
 
 	}
 	.card{
-		border: 1px solid grey;
+		border: 3px solid whitesmoke;
 		box-shadow: inset;
 		text-align: center;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 
 	}
 	.card img{
@@ -34,6 +35,11 @@
 	#search{
 		margin:10px;
 	}
+	#searchBtn{
+		cursor: pointer;
+		background-color: white;
+		border:1px solid grey ;
+	}
 </style>
 <body>
 	<h1>E-Commerce store</h1>
@@ -45,7 +51,10 @@
 	placeholder="Search your product"
 	name="search"
 	type="text">
+	<button id="searchBtn" type="submit">Search</button>
 	<div id="products"></div>
+
+	<!--search button-->
 	<script src="index.js"></script>
 </body>
 </html>
