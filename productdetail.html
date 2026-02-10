@@ -10,14 +10,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Product details</title>
 </head>
+<style>
+	.productdetails{
+		width: 400px;
+		margin: 30px auto;
+		padding: 20px;
+
+		border: 1px solid #ddd;
+		border-radius: 12px;
+
+		background: #fff;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+		font-family: Arial, sans-serif;
+	}
+	.productdetails img{
+		height: 90px;
+		width: 90px;
+		padding: 15px;
+		object-fit: contain;
+	}
+</style>
 <body>
-	<img id="image" align="center" width="200">
-	<h2 id="title" align="center"></h2>
-	<p id="desc" align="center"></p>
-	<h4 id="category" align="center"></h4>
-	<h4 id="price" align="center"></h4>
-	<h4 id="ids" align="center"></h4>
-	<h4 id="rating" align="center"></h4>
+	<div id="productdetail"></div>
+	<a href="index.html">
+		<button>Back to home</button>
+	</a>
 	<script src="productdetail.js"></script>
 </body>
 </html>

@@ -5,26 +5,23 @@ const id=params.get("id")
 //urlsearchparams converted it to an object
 //.get functuon got us the string value it sent
 
-//fetch api again, this time with the id used
-const img=document.getElementById("image")
-const title=document.getElementById("title")
-const desc=document.getElementById("desc")
-const category=document.getElementById("category")
-const price=document.getElementById("price")
-const ids=document.getElementById("ids")
-const rating=document.getElementById("rating")
-
 async function getProduct(){
 	let res=await fetch(`https://fakestoreapi.com/products/${id}`)
 	let data= await res.json()
-
-	img.src=data.image;
-	title.textContent=data.title;
-	desc.textContent="Description: "+data.description
-	category.textContent="Category: "+data.category
-	price.textContent="Price: ₹"+data.price
-	ids.textContent="ID: "+data.id
-	rating.textContent="Rating: "+data.rating.rate
+	let detail=document.getElementById("productdetail")
+	detail.innerHTML="";
+	let detailcard=document.createElement("div")
+	detailcard.className="productdetails"
+	detailcard.innerHTML=`
+	<img src=${data.image}>
+	<h2>${data.title}</h2>
+	<p>Description: ${data.description}</p>
+	<h4>Category: ${data.category}</h4>
+	<h4>Price: ₹${data.price}</h4>
+	<h4>ID: ${data.id}</h4>
+	<h4>Rating: ${data.rating.rate}</h4>
+	`
+	detail.appendChild(detailcard);
 
 }
 getProduct()
